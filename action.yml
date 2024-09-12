@@ -29,8 +29,5 @@ runs:
       env:
         python_command: python${{ inputs.python_version }}
       # if: steps.cache.outputs.cache-hit != 'true'
-      run: |
-        ${{ env.python_command }} -m pip install setuptools --quiet
-        ${{ env.python_command }} -m pip install wheel --quiet
-        ${{ env.python_command }} -m pip install -r requirements.txt --quiet
+      run: ${{ env.python_command }} -m pip install -r requirements.txt --quiet
       shell: bash
