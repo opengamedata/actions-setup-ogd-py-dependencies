@@ -5,7 +5,7 @@ A GitHub composite action for setting up the necessary Python and local requirem
 ## Release History
 
 * v1.2
-  * Updated setup-python action to v5.3
+  * Updated setup-python action to v5.3.0
 * v1.1
   * Update default Python version to 3.12
   * Don't install build dependency packages, that exists in another action.
