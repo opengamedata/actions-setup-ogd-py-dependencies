@@ -16,7 +16,7 @@ runs:
       run: export PATH=/home/runner/.local/bin:$PATH
       shell: bash
     - name: Get correct Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5.3
       with:
         python-version: "${{ inputs.python_version }}.x"
     - name: Set up pip
