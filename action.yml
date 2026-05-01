@@ -9,6 +9,10 @@ inputs:
     description: "Which version of Python to install on local GitHub Actions runner."
     required: false
     default: "3.12"
+  package_dir:
+    description: "Path to the package's base folder, specifically the folder containing the requirements.txt for the package."
+    required: false
+    default: "."
 runs:
   using: "composite"
   steps:
@@ -29,5 +33,5 @@ runs:
       env:
         python_command: python${{ inputs.python_version }}
       # if: steps.cache.outputs.cache-hit != 'true'
-      run: ${{ env.python_command }} -m pip install -r requirements.txt --quiet
+      run: ${{ env.python_command }} -m pip install -r ${{ inputs.package_dir }}/requirements.txt --quiet
       shell: bash
